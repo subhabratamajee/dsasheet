@@ -5,6 +5,7 @@ import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import clientPromise from '../lib/mongodb';
+
 import Questions from "../models/Questions";
 interface INDEXDATA {
   tpc:{
@@ -22,7 +23,6 @@ interface INDEXDATA {
   quotes: { affirmation: string };
 }
 function Details({tpc, questions, quotes }: INDEXDATA) {
-
   function handleChange(e: any) {
     const { id } = e.target;
     // const { languages } = userinfo;

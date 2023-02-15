@@ -6,6 +6,10 @@ import Questions from "../models/Questions";
 import { GetServerSideProps } from "next";
 import { dbConnect } from "../lib/mongodb";
 import array from "../public/array.png";
+import string from "../public/string.png";
+import link from "../public/link.png";
+import search from "../public/search.png";
+import binary from "../public/binary.jpg";
 import dynamic from "../public/dynamic.png";
 
 interface INDEXDATA {
@@ -20,6 +24,8 @@ interface INDEXDATA {
   quotes: { affirmation: string };
 }
 export default function Home({ questions, quotes }: INDEXDATA) {
+
+
   function TrueFalse(Type: string) {
     var trueCount = 0;
     var falseCount = 0;
@@ -83,7 +89,7 @@ export default function Home({ questions, quotes }: INDEXDATA) {
           <Link href={"String"}>
             <div className="box flex w-96 border-2 bg-orange-200 p-2 border-orange-400 rounded-lg shadow-orange-200 shadow-md mt-8">
               <div className="flex w-36">
-                <Image className=" rounded-full " src={array} alt="img" />
+                <Image className=" rounded-full " src={string} alt="img" />
               </div>
               <div className="flex flex-col ml-2 text--200">
                 <h1 className="text-xl font-bold">
@@ -107,7 +113,7 @@ export default function Home({ questions, quotes }: INDEXDATA) {
           <Link href={"Searching & Sorting"}>
             <div className="box flex w-96 border-2 bg-green-200 p-2 border-green-400 rounded-lg shadow-green-200 shadow-md mt-8">
               <div className="flex w-36">
-                <Image className=" rounded-full " src={array} alt="img" />
+                <Image className=" rounded-full " src={search} alt="img" />
               </div>
               <div className="flex flex-col ml-2 text--200">
                 <h1 className="text-xl font-bold">
@@ -131,7 +137,7 @@ export default function Home({ questions, quotes }: INDEXDATA) {
           <Link href={"LinkedList"}>
             <div className="box flex w-96 border-2 bg-red-200 p-2 border-red-400 rounded-lg shadow-red-200 shadow-md mt-8">
               <div className="flex w-36">
-                <Image className=" rounded-full " src={array} alt="img" />
+                <Image className=" rounded-full " src={link} alt="img" />
               </div>
               <div className="flex flex-col ml-2 text--200">
                 <h1 className="text-xl font-bold">
@@ -153,9 +159,9 @@ export default function Home({ questions, quotes }: INDEXDATA) {
           </Link>
 
           <Link href={"Binary Trees"}>
-            <div className="box flex w-96 border-2 bg-blue-200 p-2 border-blue-400 rounded-lg shadow-blue-200 shadow-md mt-8">
+            <div className="box flex w-96 border-2 bg-sky-200 p-2 border-sky-400 rounded-lg shadow-sky-200 shadow-md mt-8">
               <div className="flex w-36">
-                <Image className=" rounded-full " src={array} alt="img" />
+                <Image className=" rounded-full " src={binary} alt="img" />
               </div>
               <div className="flex flex-col ml-2 text--200">
                 <h1 className="text-xl font-bold">

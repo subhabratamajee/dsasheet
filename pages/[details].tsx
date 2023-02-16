@@ -26,7 +26,7 @@ function Details({tpc, questions, quotes }: INDEXDATA) {
   async function handleChange(e: any) {
     const { id } = e.target;
     // const { languages } = userinfo;
-    await fetch(`http://localhost:3000/api/${id}`, {
+     fetch(`https://dsasheet-subha.vercel.app/api/${id}`, {
       method: "PUT",
     })
       .then((response) => {

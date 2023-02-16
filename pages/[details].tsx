@@ -23,10 +23,10 @@ interface INDEXDATA {
   quotes: { affirmation: string };
 }
 function Details({tpc, questions, quotes }: INDEXDATA) {
-  function handleChange(e: any) {
+  async function handleChange(e: any) {
     const { id } = e.target;
     // const { languages } = userinfo;
-    fetch(`http://localhost:3000/api/${id}`, {
+    await fetch(`http://localhost:3000/api/${id}`, {
       method: "PUT",
     })
       .then((response) => {
@@ -39,12 +39,12 @@ function Details({tpc, questions, quotes }: INDEXDATA) {
         toast.error(error);
       });
 
-    function onload() {
+      await onload();
+     function onload() {
       setTimeout(() => {
         window.location.reload();
       }, 3000);
     }
-    onload();
   }
 
   return (

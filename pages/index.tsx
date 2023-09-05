@@ -408,6 +408,8 @@ export const getServerSideProps: GetServerSideProps = async function () {
   const quotes = await fetch("https://www.affirmations.dev/").then((response) =>
     response.json()
   );
+
+ 
   return {
     props: {
       questions: JSON.parse(JSON.stringify(questions)),

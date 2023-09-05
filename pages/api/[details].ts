@@ -7,6 +7,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   await dbConnect();
   const { method } = req;
   switch (method) {
+    case "GET":
+      try{
+        const random= await Questions.aggregate([
+          {$match: {Topic: Id}},
+          {$sample: {size: 1}}
+        ]);
+        await res
+        .status(200)
+        .json({ success: true,data:random, message: `Random Pickup is Successful` });
+      }
+      catch (error) {
+        await res
+          .status(500)
+          .json({ success: false, error, message: "something is wrong" });
+      }
+      break;
     case "PUT":
       try {
         const qtn = await Questions.findById(Id);
